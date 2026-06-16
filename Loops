@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Main {
+
+    static long calculate_nCr(int n, int r) {
+
+        long r_fact=1; 
+        long n_fact=1;
+        int d=(n-r);
+        long  n_r_fact=1;
+        for(int i=n; i>=1; i--){
+             n_fact *=i;
+        }
+        for(int i=d; i>=1; i--){
+             n_r_fact *=i;
+        }
+        for(int i=r; i>=1; i--){
+            r_fact*=i;
+        }
+
+         long ans =n_fact/(r_fact*n_r_fact);
+         return ans;
+        
+
+        
+    }
+	
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int r = scanner.nextInt();
+        long ans = calculate_nCr(n,r);
+        System.out.print(ans);
+    }
+}
