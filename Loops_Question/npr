@@ -1,0 +1,33 @@
+import java.util.*;
+  
+  public class Main{
+  
+  public static void main(String[] args) {
+      Scanner scn = new Scanner(System.in);
+      int n = scn.nextInt();
+      int b = scn.nextInt();
+      int dn = getValueInBase(n, b);
+      System.out.println(dn);
+   }
+   
+   public static int getValueInBase(int n, int r){
+    int n_fact=1;
+    int n_r_fact=1;
+    int d=(n-r);
+    for (int i=n; i>=1; i--){
+      n_fact *=i;
+    }
+    for(int i=d; i>=1; i--){
+      n_r_fact *=i;
+
+    }
+    int ans= n_fact/(n_r_fact);
+    return ans;
+    
+
+
+
+
+    
+   }
+  }
