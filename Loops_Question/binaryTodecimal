@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static long binaryToDecimal(long binaryNumber) {
+              int ans=0;
+              int power=0;
+            while( binaryNumber>0 ){
+                long digit=binaryNumber%10;
+                ans+=digit*(long)Math.pow(2,power);
+                power++;
+                binaryNumber /=10;
+
+
+            }
+            return ans;
+
+            
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long binaryNumber = scanner.nextInt();
+        System.out.println(binaryToDecimal(binaryNumber));
+        scanner.close();
+    }
+}
